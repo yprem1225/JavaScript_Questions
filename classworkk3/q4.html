@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name <input type="text" id ="name" required><br>
+    Email <input type="email" id = "email" required><br>
+    Query <input type="text" id = "query" required><br>
+
+    <button id = "b1">Submit</button>
+
+    <script>
+        const b1 = document.getElementById("b1")
+        b1.addEventListener("click",function(){
+            const name = document.getElementById("name").value
+            const nameReg = /^[A-za-z]+$/
+
+            const email  = document.getElementById("email").value
+            const emailReg =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+            const query = document.getElementById("query").value
+
+            if(!nameReg.test(name)){
+                alert("No valid name")
+            }else if(!emailReg.test(email)){
+                alert("No valid email")
+            }else if(query.length>10){
+                alert("Max letters 10")
+            }else{
+                alert("valid")
+            }
+        })
+    </script>
+</body>
+</html>
